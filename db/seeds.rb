@@ -6,13 +6,19 @@ merchant1 = Merchant.new({
   "name" => "Amazon"
   })
 
+merchant1.save()
+
 merchant2 = Merchant.new({
   "name" => "Asda"
   })
 
+merchant2.save()
+
 merchant3 = Merchant.new({
   "name" => "Cineworld"
   })
+
+merchant3.save()
 
 tag1 = Tag.new({
   "type" => "entertainment"
