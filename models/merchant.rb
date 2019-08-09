@@ -21,4 +21,10 @@ class Merchant
     SqlRunner.run(sql)
   end
 
+  def update()
+    sql = "UPDATE merchants SET name = $1 where id = $2"
+    values = [@name, @id]
+    SqlRunner.run(sql, values)
+  end
+
 end
