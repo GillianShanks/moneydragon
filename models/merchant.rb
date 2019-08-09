@@ -33,4 +33,10 @@ class Merchant
     return merchants.map{|merchant| Merchant.new(merchant)}
   end
 
+  def delete()
+    sql = "DELETE FROM merchants where id = $1"
+    values = [@id]
+    SqlRunner.run(sql, values)
+  end
+
 end
