@@ -23,17 +23,26 @@ merchant3 = Merchant.new({
 
 merchant3.save()
 
+
+
 tag1 = Tag.new({
   "type" => "entertainment"
   })
+
+tag1.save()
 
 tag2 = Tag.new({
   "type" => "food"
   })
 
+tag2.save()
+
 tag3 = Tag.new({
   "type" => "games"
   })
+
+tag3.save()
+
 
 transaction1 = Transaction.new({
   "amount" => 15,

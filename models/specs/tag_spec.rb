@@ -15,4 +15,7 @@ class TagTest < MiniTest::Test
     assert_equal("entertainment", @tag1.type)
   end
 
+  
+
+
 end
