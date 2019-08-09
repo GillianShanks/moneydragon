@@ -25,7 +25,12 @@ class Transaction
     sql = "UPDATE transactions SET (amount, merchant_id, tag_id) = ($1, $2, $3) WHERE id = $4"
     values = [@amount, @merchant_id, @tag_id, @id]
     SqlRunner.run(sql, values)
+  end
 
+  def self.all()
+    sql = "SELECT * FROM transactions"
+    transactions = SqlRunner.run(sql)
+    return transactions.map{|details|Transaction.new(details)}
   end
 
 end
