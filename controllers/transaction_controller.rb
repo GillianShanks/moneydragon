@@ -30,7 +30,11 @@ get '/spending/:id/edit' do
 end
 
 #UPDATE
-
+post '/spending/:id' do
+  spend=Transaction.new(params)
+  spend.update()
+  redirect('/spending')
+end
 
 #DELETE
 
