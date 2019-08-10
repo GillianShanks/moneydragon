@@ -37,6 +37,11 @@ post '/spending/:id' do
 end
 
 #DELETE
-
+post '/spending/:id/delete' do
+  id=params[:id].to_i()
+  spend=Transaction.find(id)
+  spend.delete()
+  redirect('/spending')
+end
 
 #SHOW
