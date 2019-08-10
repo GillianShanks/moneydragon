@@ -8,6 +8,17 @@
   <title>MoneyDragon</title>
 </head>
 <body>
+  <section class="flex">
+  <nav>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/merchants">Your Merchants</a></li>
+      <li><a href="/tags">Your Tags</a></li>
+      <li><a href="/purchases">Your Purchases</a></li>
+      <li class="add_purchase"><a href="/purchases/new">Add Purchase</a></li>
+    </ul>
+  </nav>
   <%= yield %>
+  </section>
 </body>
 </html>
