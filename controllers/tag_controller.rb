@@ -33,7 +33,12 @@ post '/tags/:id' do
 end
 
 #DELETE
-
+post '/tags/:id/delete' do
+  id=params[:id].to_i()
+  tag=Tag.find(id)
+  tag.delete()
+  redirect("/tags")
+end
 
 #SHOW
 get '/tags/:id' do
