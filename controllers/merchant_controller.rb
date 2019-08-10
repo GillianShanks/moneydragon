@@ -6,8 +6,6 @@ get '/merchants' do
   erb(:"merchant/index")
 end
 
-#SHOW
-
 #NEW
 
 #CREATE
@@ -17,3 +15,5 @@ end
 #UPDATE
 
 #DELETE
+
+#SHOW
