@@ -12,7 +12,11 @@ get '/merchants/new' do
 end
 
 #CREATE
-
+post '/merchants' do
+  new_merchant=Merchant.new(params)
+  new_merchant.save()
+  redirect '/merchants'
+end
 #EDIT
 
 #UPDATE
