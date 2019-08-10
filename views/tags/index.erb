@@ -1,5 +1,6 @@
 <h1>Your Tags</h1>
-
+<p><a class="add-btn" href="/tags/new">add new tag</a></p>
+<br />
 <% for tag in @tags %>
 <p><%=tag.type.capitalize()%></p>
 <a href="/tags/<%=tag.id%>">more details</a>
