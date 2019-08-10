@@ -12,7 +12,11 @@ get '/tags/new' do
 end
 
 #CREATE
-
+post '/tags' do
+  new_tag=Tag.new(params)
+  new_tag.save()
+  redirect '/tags'
+end
 
 #EDIT
 
