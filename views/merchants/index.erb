@@ -1,0 +1,8 @@
+<h1>Your merchants</h1>
+<br />
+<hr />
+<%for merchant in @merchants%>
+<h3><%=merchant.name%></h3>
+<a href="/merchants/<%=merchant.id%>">all <%=merchant.name%> spends</a>
+<hr />
+<%end%>
