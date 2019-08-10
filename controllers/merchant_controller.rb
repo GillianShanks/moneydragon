@@ -26,8 +26,19 @@ get '/merchants/:id/edit' do
 end
 
 #UPDATE
+post "/merchants/:id" do
+  merchant = Merchant.new(params)
+  merchant.update()
+  redirect "/merchants/#{merchant.id}"
+end
 
 #DELETE
+post "/merchants/:id/delete" do
+  id = params[:id].to_i()
+  merchant = Merchant.find(id)
+  merchant.delete()
+  redirect "/merchants"
+end
 
 #SHOW
 get '/merchants/:id' do
