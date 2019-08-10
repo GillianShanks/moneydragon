@@ -1,0 +1,31 @@
+<h1>Add new spending details:</h1>
+
+<form action="/spending" method="POST">
+  <p>I spent:</p>
+  <label for="add-amount">Amount (£): </label>
+  <input required min="0" type="number" id="add-amount" name="amount">
+  <br />
+  <br />
+  <label for="dd-merchant">At:</label>
+  <select required name="merchant_id" id="dd-merchant">
+    <option value="" selected disabled>Select a place (required):</option>
+    <%for merchant in @merchants%>
+    <option value="<%=merchant.id%>"><%=merchant.name%></option>
+    <%end%>
+  </select>
+  <br />
+  <br />
+  <label for="dd-tag">Tag as:</label>
+  <select required name="tag_id" id="dd-tag">
+    <option value="" selected disabled>Select a tag (required):</option>
+    <%for tag in @tags%>
+    <option value="<%=tag.id%>"><%=tag.type%></option>
+    <%end%>
+  </select>
+  <br />
+  <br />
+  <input type="submit" value="add">
+
+</form>
+<br />
+<a href="/">cancel</a>
