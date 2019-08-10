@@ -1,0 +1,6 @@
+<h1>Editing the place: <%=@merchant.name%></h1>
+<br />
+<form action="/merchants/<%=@merchant.id%>" method="POST">
+  <label for="new-name">New name:</label>
+  <input type="text" id="new-name" name="name" value="<%=@merchant.name%>">
+</form>
