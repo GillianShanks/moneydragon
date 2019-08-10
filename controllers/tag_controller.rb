@@ -19,10 +19,18 @@ post '/tags' do
 end
 
 #EDIT
-
+get '/tags/:id/edit' do
+  id = params[:id].to_i()
+  @tag=Tag.find(id)
+  erb(:"tags/edit")
+end
 
 #UPDATE
-
+post '/tags/:id' do
+  tag=Tag.new(params)
+  tag.update()
+  redirect("/tags/#{tag.id}")
+end
 
 #DELETE
 

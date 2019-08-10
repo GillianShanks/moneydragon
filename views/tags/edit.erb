@@ -1,0 +1,9 @@
+<h1>Editing your tag: '<%=@tag.type%>'</h1>
+
+<form action="/tags/<%=@tag.id%>" method="POST">
+  <label for="new-tag">New type:</label>
+  <input type="text" id="new-tag" name="type" value="<%=@tag.type%>">
+  <input type="submit" value="update">
+</form>
+<br />
+<a href="/tags/<%=@tag.id%>">cancel</a>
