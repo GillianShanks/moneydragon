@@ -1,47 +1,47 @@
 require_relative('../models/merchant.rb')
 
 #INDEX
-get '/merchants' do
+get '/places' do
   @merchants = Merchant.all()
   erb(:"merchants/index")
 end
 
 #NEW
-get '/merchants/new' do
+get '/places/new' do
   erb(:"merchants/new")
 end
 
 #CREATE
-post '/merchants' do
+post '/places' do
   new_merchant=Merchant.new(params)
   new_merchant.save()
-  redirect '/merchants'
+  redirect '/places'
 end
 
 #EDIT
-get '/merchants/:id/edit' do
+get '/places/:id/edit' do
   id = params[:id].to_i()
   @merchant = Merchant.find(id)
   erb(:"merchants/edit")
 end
 
 #UPDATE
-post "/merchants/:id" do
+post "/places/:id" do
   merchant = Merchant.new(params)
   merchant.update()
-  redirect "/merchants/#{merchant.id}"
+  redirect "/places/#{merchant.id}"
 end
 
 #DELETE
-post "/merchants/:id/delete" do
+post "/places/:id/delete" do
   id = params[:id].to_i()
   merchant = Merchant.find(id)
   merchant.delete()
-  redirect "/merchants"
+  redirect "/places"
 end
 
 #SHOW
-get '/merchants/:id' do
+get '/places/:id' do
   id=params[:id].to_i()
   @merchant = Merchant.find(id)
   erb(:"merchants/show")

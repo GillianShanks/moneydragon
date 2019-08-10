@@ -1,10 +1,12 @@
-<h1>Places you spend:</h1>
-<a href="/merchants/new">Add new place</a>
+<h1>Places I spend:</h1>
+<a href="/places/new">Add new place</a>
 <br />
 <br />
 <hr />
 <%for merchant in @merchants%>
-<h3><%=merchant.name%></h3>
-<a href="/merchants/<%=merchant.id%>">more details</a>
+<h3><%=merchant.name.capitalize%></h3>
+<a href="/places/<%=merchant.id%>">more details</a>
 <hr />
 <%end%>
+<br />
+<a href="/">home</a>

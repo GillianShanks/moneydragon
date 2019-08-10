@@ -1,10 +1,10 @@
-<h1>Editing your place: '<%=@merchant.name%>'</h1>
+<h1>Editing my place: '<%=@merchant.name%>'</h1>
 <br />
-<form action="/merchants/<%=@merchant.id%>" method="POST">
+<form action="/places/<%=@merchant.id%>" method="POST">
   <label for="new-name">New name:</label>
-  <input type="text" id="new-name" name="name" value="<%=@merchant.name%>">
+  <input required type="text" id="new-name" name="name" value="<%=@merchant.name%>">
 
   <input type="submit" value="Update">
 </form>
 <br />
-<a href="/merchants/<%=@merchant.id%>">cancel</a>
+<a href="/places/<%=@merchant.id%>">back to <%=@merchant.name%></a>

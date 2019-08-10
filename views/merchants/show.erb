@@ -1,11 +1,11 @@
 <h3>A closer look at</h3>
-<h1><%= @merchant.name %></h1>
-<a href="/merchants/<%= @merchant.id %>/edit">edit</a>
+<h1><%= @merchant.name.capitalize %></h1>
+<a href="/places/<%= @merchant.id %>/edit">edit</a>
 
-<form class="delete" action="/merchants/<%= @merchant.id %>/delete" method="POST">
+<form class="delete" action="/places/<%= @merchant.id %>/delete" method="POST">
   <input type="submit" value="delete">
 </form>
 
 <br />
 <br />
-<a href="/merchants">back</a>
+<a href="/places">back to my places</a>

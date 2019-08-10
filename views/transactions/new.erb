@@ -10,7 +10,7 @@
   <select required name="merchant_id" id="dd-merchant">
     <option value="" selected disabled>Select a place (required):</option>
     <%for merchant in @merchants%>
-    <option value="<%=merchant.id%>"><%=merchant.name%></option>
+    <option value="<%=merchant.id%>"><%=merchant.name.capitalize%></option>
     <%end%>
   </select>
   <br />
@@ -19,7 +19,7 @@
   <select required name="tag_id" id="dd-tag">
     <option value="" selected disabled>Select a tag (required):</option>
     <%for tag in @tags%>
-    <option value="<%=tag.id%>"><%=tag.type%></option>
+    <option value="<%=tag.id%>"><%=tag.type.downcase%></option>
     <%end%>
   </select>
   <br />
@@ -28,4 +28,4 @@
 
 </form>
 <br />
-<a href="/">cancel</a>
+<a href="/">home</a>

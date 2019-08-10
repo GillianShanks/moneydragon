@@ -1,11 +1,14 @@
-<h1>Your spending:</h1>
+<h1>My spending:</h1>
+<a href="/spending/new">add spend</a>
+<br />
+<br />
 <hr />
 
 <%for spend in @spending %>
 
 <div class="spend-row">
-  <p>You spent £<%=spend.amount%></p>
-  <p>at <a href="/merchants/<%=spend.merchant_id%>"><%=spend.merchant.name%></a></p>
+  <p>I spent £<%=spend.amount%></p>
+  <p>at <a href="/places/<%=spend.merchant_id%>"><%=spend.merchant.name.capitalize%></a></p>
   <p>tagged as: <a href="/tags/<%=spend.tag_id%>"><%=spend.tag.type%></a>.</p>
 </div>
 
@@ -20,4 +23,4 @@
 
 
 <br />
-<a href="/">back</a>
+<a href="/">home</a>
