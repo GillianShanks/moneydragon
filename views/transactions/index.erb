@@ -1,0 +1,22 @@
+<h1>Your spending:</h1>
+
+<%for spend in @transactions %>
+
+<div class="spend-row">
+  <p>You spent £<%=spend.amount%></p>
+  <p>at <a href="/merchants/<%=spend.merchant_id%>"><%=spend.merchant.name%></a></p>
+  <p>tagged as: <a href="/tags/<%=spend.tag_id%>"><%=spend.tag.type%></a></p>
+</div>
+
+<a class="edit-btn" href="/spending/<%=spend.id%>/edit">edit</a>
+<form action="/spending/<%=spend.id%>/delete" method="POST">
+  <input type="submit" value="delete">
+</form>
+
+<hr />
+
+<%end%>
+
+
+<br />
+<a href="/">back</a>
