@@ -22,3 +22,8 @@ end
 
 
 #SHOW
+get '/tags/:id' do
+  id = params[:id].to_i()
+  @tag = Tag.find(id)
+  erb(:"tags/show")
+end
