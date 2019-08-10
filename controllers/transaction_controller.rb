@@ -21,7 +21,13 @@ post '/spending' do
 end
 
 #EDIT
-
+get '/spending/:id/edit' do
+  id=params[:id].to_i()
+  @spend=Transaction.find(id)
+  @merchants = Merchant.all()
+  @tags = Tag.all()
+  erb(:"transactions/edit")
+end
 
 #UPDATE
 

@@ -1,0 +1,35 @@
+<h1>Edit your spending details:</h1>
+<p class="prv-spend">Previously:<br /> I spent £<%=@spend.amount%> at '<%=@spend.merchant.name%>', tagged as '<%=@spend.tag.type%>'.</p>
+
+
+<form action="/spending/<%=@spend.id%>" method="POST">
+  <p>I spent:</p>
+  <label for="add-amount">Amount (£): </label>
+  <input required min="0" type="number" id="add-amount" name="amount" value="<%=@spend.amount%>">
+
+  <br />
+  <br />
+  <label for="dd-merchant">At:</label>
+  <select required name="merchant_id" id="dd-merchant">
+    <option value="" disabled>Select a place (required):</option>
+    <%for merchant in @merchants%>
+    <option <%="selected" if @spend.merchant_id == merchant.id%> value="<%=merchant.id%>"><%=merchant.name%></option>
+    <%end%>
+  </select>
+
+  <br />
+  <br />
+  <label for="dd-tag">Tag as:</label>
+  <select required name="tag_id" id="dd-tag">
+    <option value="" disabled>Select a tag (required):</option>
+    <%for tag in @tags%>
+    <option <%="selected" if @spend.tag_id == tag.id%> value="<%=tag.id%>"><%=tag.type%></option>
+    <%end%>
+  </select>
+  <br />
+  <br />
+  <input type="submit" value="update">
+
+</form>
+<br />
+<a href="/spending">cancel</a>
