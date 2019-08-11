@@ -41,8 +41,9 @@ flex-direction: row;
 
 body{
   background-color: black;
-  background-image: url(/img/background-trans2.png);
-  background-size: 50em;
+  background-image: url(/img/slimbg.png);
+  background-size: 100%;
+  /* or stretch? */
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
@@ -151,6 +152,7 @@ ul .top{
 .sml-logo{
   justify-content: flex-start;
   margin-top:-5em;
+  z-index: -99;
 }
 
 .sml-logo-dragon{
