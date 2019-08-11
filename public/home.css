@@ -1,0 +1,25 @@
+/* ------HOME LOGO -------- */
+.home{
+  align-items: center;
+
+  text-align: center;
+}
+
+
+/* logos stay same size regardless of screensize */
+.hlogo-dragon{
+  width: 20em;
+}
+
+.hlogo-words{
+  margin-top: -6em;
+  width: 25em;
+}
+
+/* ---- TEXT ----- */
+
+.home h1{
+  margin-top: -1em;
+  font-size: 2em;
+
+}

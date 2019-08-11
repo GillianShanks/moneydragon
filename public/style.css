@@ -1,84 +1,170 @@
 .flex {
+  d display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
   flex-grow: 1;
 }
 .flex-column{
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+-moz-box-orient: vertical;
+-webkit-flex-direction: column;
+-ms-flex-direction: column;
+flex-direction: column;
 }
 .flex-row{
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+-moz-box-orient: horizontal;
+-webkit-flex-direction: row;
+-ms-flex-direction: row;
+flex-direction: row;
+}
+
+.align-center{
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.inline-flex{
+  display: inline-flex;
+  /* other webkits? */
+}
+
+/* is this correct? copied from above */
+.justify-center{
+  -webkit-justify-contents: center;
+  -ms-flex-justify: center;
+  justify-content: center;
 }
 
 body{
-  background-image: url(/background-trans2.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top center;
   background-color: black;
+  background-image: url(/img/background-trans2.png);
+  background-size: 50em;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow:scroll;
+  margin:0;
   color: white;
+  font-family: cursive;
+}
 
+.content{
+  position: relative;
+  top:60px;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 4em;
+}
+
+/* if screen less than 620px wide make nav list into a column*/
+
+@media screen and (max-width: 620px) {
+  .nav-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+  .add-spend{
+    justify-content: center;
+    margin: auto;
+  }
+}
+
+/* when less than 242px make the add-spend button center - NOT WORKING */
+@media screen and (max-width:242px) {
+  .add-spend{
+    justify-content: center;
+  }
 }
 
 /* -------- NAV BUTTONS ---------- */
 
-.nav-list a {
+.nav-list{
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  flex-shrink:0;
+  display: inline-flex;
+  width:100%;
+  /* for a fixed nav bar */
+  overflow: auto;
+  position:fixed;
+  width: 100%;
+  flex:1;
+  z-index: 99;
+  background-color: black;
+}
+
+.top a {
   text-decoration: none;
   color: black;
-  font-family: cursive;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 1.2em;
   border: 0.1em solid gold ;
   background-color: white;
-  color: black;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
   padding-left: 1em;
   padding-right: 1em;
   border-radius: 8px;
+  text-align: center;
+  margin:0;
 }
+
+ul .top{
+  /* can't get rid of margin on add-spend */
+    margin=0;
+}
+
 .add-spend a{
   background-color: orange;
 }
-.nav-btn{
-
-  padding: 1em;
-  margin-left: 2em;
-  margin-right: 2em;
-  /* justify-content: space-between; */
-}
-
-.nav-list{
-  margin:auto;
-  padding: 0;
-  justify-content: center;
-  list-style-type: none;
-}
 
 .nav-btns{
-  justify-content: center;
+  padding-top:1em;
   padding-bottom: 1em;
   border-bottom: 0.25em solid white;
 }
 
+.nav-btn{
+  padding: 0.1em;
+  justify-content: space-around;
+}
+
 .add-spend{
-  align-self: flex-end;
+  justify-content: flex-end;
   margin-right: 3em;
+  margin-left: 3em;
 
 }
 
-/* ------HOME LOGO -------- */
-
-.hlogo {
-  /* flex-flow: row wrap; */
-  align-items: : center;
+.foot{
+  font-size: 0.8em;
+  bottom:0;
+  text-align: right;
 }
 
-.hlogo-dragon{
-  width: 40%;
-  align-items: : center;
+/* small logo at top of all pages but home  (has same issue of disappearing as add-spend) - any way to hide on just the home page?*/
+.sml-logo{
+  justify-content: flex-start;
+  margin-top:-5em;
 }
-.hlogo-words{
-  width: 20%;
-  align-items: : center;
+
+.sml-logo-dragon{
+  width: 5em;
+}
+
+.sml-logo-words{
+  width: 4em;
+
+}
+
+hr {
+  border-color: gold;
+  border-style: inset;
+  border-width: 1px;
+  margin: 0.5em 0;
 }

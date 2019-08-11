@@ -1,3 +1,8 @@
+<div class="sml-logo flex flex-row">
+  <img class="sml-logo-dragon justify-center" src="/img/dragongif.gif" alt="dragon on gold">
+  <img class="sml-logo-words justify-center" src="/img/md-txt-trans.png" alt="moneydragon text">
+</div>
+
 <h1>Edit my spending details:</h1>
 <p class="prv-spend">Previously:<br /> I spent £<%=@spend.amount%> at '<%=@spend.merchant.name%>', tagged as '<%=@spend.tag.type%>'.</p>
 
@@ -32,4 +37,4 @@
 
 </form>
 <br />
-<a href="/spending">back to my spending</a>
+<a class="ctr-btn inline-flex" href="/spending">back to my spending</a>

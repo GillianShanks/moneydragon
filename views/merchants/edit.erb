@@ -1,3 +1,8 @@
+<div class="sml-logo flex flex-row">
+  <img class="sml-logo-dragon justify-center" src="/img/dragongif.gif" alt="dragon on gold">
+  <img class="sml-logo-words justify-center" src="/img/md-txt-trans.png" alt="moneydragon text">
+</div>
+
 <h1>Editing my place: '<%=@merchant.name%>'</h1>
 <br />
 <form action="/places/<%=@merchant.id%>" method="POST">
@@ -7,4 +12,4 @@
   <input type="submit" value="Update">
 </form>
 <br />
-<a href="/places/<%=@merchant.id%>">back to <%=@merchant.name%></a>
+<a class="ctr-btn inline-flex" href="/places/<%=@merchant.id%>">back to <%=@merchant.name%></a>

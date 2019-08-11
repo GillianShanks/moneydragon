@@ -1,3 +1,8 @@
+<div class="sml-logo flex flex-row">
+  <img class="sml-logo-dragon justify-center" src="/img/dragongif.gif" alt="dragon on gold">
+  <img class="sml-logo-words justify-center" src="/img/md-txt-trans.png" alt="moneydragon text">
+</div>
+
 <h1>Editing my tag: '<%=@tag.type%>'</h1>
 
 <form action="/tags/<%=@tag.id%>" method="POST">
@@ -6,4 +11,4 @@
   <input type="submit" value="update">
 </form>
 <br />
-<a href="/tags/<%=@tag.id%>">back to <%=@tag.type%></a>
+<a class="ctr-btn inline-flex" href="/tags/<%=@tag.id%>">back to <%=@tag.type%></a>

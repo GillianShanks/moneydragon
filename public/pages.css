@@ -1,0 +1,27 @@
+a{
+  color: orange;
+  text-decoration: underline;
+  font-size: 1.2em;
+}
+a.ctr-btn{
+  justify-content: center;
+}
+
+p{
+  padding-right: 2em;
+  font-size: 1.3em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h1 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+  font-size: 2em;
+  margin:0;
+}

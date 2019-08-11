@@ -1,15 +1,21 @@
+<div class="sml-logo flex flex-row">
+  <img class="sml-logo-dragon justify-center" src="/img/dragongif.gif" alt="dragon on gold">
+  <img class="sml-logo-words justify-center" src="/img/md-txt-trans.png" alt="moneydragon text">
+</div>
+
+
 <h1>My spending:</h1>
-<a href="/spending/new">add spend</a>
+<a class="ctr-btn inline-flex" href="/spending/new">add spend</a>
 <br />
 <br />
 <hr />
 
 <%for spend in @spending %>
 
-<div class="spend-row">
-  <p>I spent £<%=spend.amount%></p>
-  <p>at <a href="/places/<%=spend.merchant_id%>"><%=spend.merchant.name.capitalize%></a></p>
-  <p>tagged as: <a href="/tags/<%=spend.tag_id%>"><%=spend.tag.type%></a>.</p>
+<div class="spend-row inline-flex">
+  <p>I spent £<%=spend.amount%> </p>
+  <p> at <a href="/places/<%=spend.merchant_id%>"><%=spend.merchant.name.capitalize%> </a></p>
+  <p> tagged as: <a href="/tags/<%=spend.tag_id%>"><%=spend.tag.type%></a>.</p>
 </div>
 
 <a class="edit-btn" href="/spending/<%=spend.id%>/edit">edit</a>
@@ -23,4 +29,4 @@
 
 
 <br />
-<a href="/">home</a>
+<a class="ctr-btn inline-flex" class="ctr-btn inline-flex"href="/">home</a>

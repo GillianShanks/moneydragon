@@ -1,6 +1,11 @@
-<h3>A closer look at</h3>
+<div class="sml-logo flex flex-row">
+  <img class="sml-logo-dragon justify-center" src="/img/dragongif.gif" alt="dragon on gold">
+  <img class="sml-logo-words justify-center" src="/img/md-txt-trans.png" alt="moneydragon text">
+</div>
+
+<h4>A closer look at</h4>
 <h1><%= @merchant.name.capitalize %></h1>
-<a href="/places/<%= @merchant.id %>/edit">edit</a>
+<a class="ctr-btn inline-flex" href="/places/<%= @merchant.id %>/edit">edit</a>
 
 <form class="delete" action="/places/<%= @merchant.id %>/delete" method="POST">
   <input type="submit" value="delete">
@@ -8,4 +13,4 @@
 
 <br />
 <br />
-<a href="/places">back to my places</a>
+<a class="ctr-btn inline-flex" href="/places">back to my places</a>

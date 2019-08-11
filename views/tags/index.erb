@@ -1,10 +1,17 @@
+<div class="sml-logo flex flex-row">
+  <img class="sml-logo-dragon justify-center" src="/img/dragongif.gif" alt="dragon on gold">
+  <img class="sml-logo-words justify-center" src="/img/md-txt-trans.png" alt="moneydragon text">
+</div>
+
 <h1>My Tags</h1>
-<p><a class="add-btn" href="/tags/new">add new tag</a></p>
+<a class="ctr-btn inline-flex" href="/tags/new">add new tag</a>
 <br />
+<br />
+<hr />
 <% for tag in @tags %>
-<p><%=tag.type.capitalize()%></p>
+<h3><%=tag.type.capitalize()%></h3>
 <a href="/tags/<%=tag.id%>">more details</a>
 <hr />
 <% end %>
 <br />
-<a href="/">home</a>
+<a class="ctr-btn inline-flex" href="/">home</a>

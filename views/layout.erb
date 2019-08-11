@@ -4,24 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="stylesheet" href="/home.css" type="text/css">
+  <link rel="stylesheet" href="/pages.css" type="text/css">
   <link rel="stylesheet" href="/style.css" type="text/css">
   <title>MoneyDragon</title>
 </head>
 <body>
-  <section class="flex flex-column">
-  <nav>
-    <ul class="nav-list flex flex-column">
-      <div class="nav-btns flex flex-row">
-      <li class="nav-btn"><a href="/">Home</a></li>
-      <li class="nav-btn"><a href="/spending">My Spending</a></li>
-      <li class="nav-btn"><a href="/places">My Places</a></li>
-      <li class="nav-btn"><a href="/tags">My Tags</a></li>
-      </div>
-      <br />
-      <li class="add-spend nav-btn"><a href="/spending/new">Add Spend</a></li>
-    </ul>
+    <nav>
+      <ul class="nav-list top">
+        <div class="nav-btns flex flex-row">
+          <li class="nav-btn flex"><a href="/">Home</a></li>
+          <li class="nav-btn flex"><a href="/spending">My Spending</a></li>
+          <li class="nav-btn flex"><a href="/places">My Places</a></li>
+          <li class="nav-btn flex"><a href="/tags">My Tags</a></li>
+        </div>
+      </ul>
+    </nav>
+    <br />
+    <div class="flex flex-column content">
+        <ul class="top flex-row">
+          <li class="add-spend nav-btn flex"><a href="/spending/new">Add Spend</a></li>
+        </ul>
+
+      <%= yield %>
+    </div>
+  <nav class="foot nav-list">
+    <p>Artwork by Gillian Shanks</p>
   </nav>
-  <%= yield %>
-  </section>
 </body>
 </html>
