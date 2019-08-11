@@ -8,14 +8,17 @@
   <title>MoneyDragon</title>
 </head>
 <body>
-  <section class="flex">
+  <section class="flex flex-column">
   <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-      <li><a href="/spending">My Spending</a></li>
-      <li><a href="/places">My Places</a></li>
-      <li><a href="/tags">My Tags</a></li>
-      <li class="add_spend"><a href="/spending/new">Add Spend</a></li>
+    <ul class="nav-list flex flex-column">
+      <div class="nav-btns flex flex-row">
+      <li class="nav-btn"><a href="/">Home</a></li>
+      <li class="nav-btn"><a href="/spending">My Spending</a></li>
+      <li class="nav-btn"><a href="/places">My Places</a></li>
+      <li class="nav-btn"><a href="/tags">My Tags</a></li>
+      </div>
+      <br />
+      <li class="add-spend nav-btn"><a href="/spending/new">Add Spend</a></li>
     </ul>
   </nav>
   <%= yield %>

@@ -1,0 +1,84 @@
+.flex {
+  display: flex;
+  flex-grow: 1;
+}
+.flex-column{
+  flex-direction: column;
+  justify-content: center;
+}
+.flex-row{
+  flex-direction: row;
+}
+
+body{
+  background-image: url(/background-trans2.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-color: black;
+  color: white;
+
+}
+
+/* -------- NAV BUTTONS ---------- */
+
+.nav-list a {
+  text-decoration: none;
+  color: black;
+  font-family: cursive;
+  font-weight:bold;
+  font-size: 1.2em;
+  border: 0.1em solid gold ;
+  background-color: white;
+  color: black;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 8px;
+}
+.add-spend a{
+  background-color: orange;
+}
+.nav-btn{
+
+  padding: 1em;
+  margin-left: 2em;
+  margin-right: 2em;
+  /* justify-content: space-between; */
+}
+
+.nav-list{
+  margin:auto;
+  padding: 0;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.nav-btns{
+  justify-content: center;
+  padding-bottom: 1em;
+  border-bottom: 0.25em solid white;
+}
+
+.add-spend{
+  align-self: flex-end;
+  margin-right: 3em;
+
+}
+
+/* ------HOME LOGO -------- */
+
+.hlogo {
+  /* flex-flow: row wrap; */
+  align-items: : center;
+}
+
+.hlogo-dragon{
+  width: 40%;
+  align-items: : center;
+}
+.hlogo-words{
+  width: 20%;
+  align-items: : center;
+}
