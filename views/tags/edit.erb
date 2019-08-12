@@ -5,10 +5,10 @@
 
 <h1>Editing my tag: '<%=@tag.type%>'</h1>
 
-<form action="/tags/<%=@tag.id%>" method="POST">
+<form class="flex ctr-form" ction="/tags/<%=@tag.id%>" method="POST">
   <label for="new-tag">New type:</label>
   <input required type="text" id="new-tag" name="type" value="<%=@tag.type%>">
-  <input type="submit" value="update">
+  <input class="submit-btn" type="submit" value="update">
 </form>
 <br />
 <a class="ctr-btn inline-flex" href="/tags/<%=@tag.id%>">back to <%=@tag.type%></a>

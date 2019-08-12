@@ -1,11 +1,128 @@
+/* ---------FORM CSS------- */
+form{
+  font-size:1.2em;
+}
+
+.ctr-form{
+  justify-content: center;
+}
+
+label{
+  padding:0em 1em 0em 1em;
+}
+
+form.spending{
+  align-items: center;
+  font-size: 1.3em;
+}
+
+select{
+  color: white;
+  background-color: black;
+  font-family: cursive;
+  font-size: 0.7em;
+}
+
+select.option{
+  background-color: white;
+}
+
+/* ------BUTTONS AND LINKS ------- */
+
 a{
   color: orange;
   text-decoration: underline;
   font-size: 1.2em;
+
+}
+
+/* hover does not change to hand in chrome inspect mode - need webkits? */
+a:hover{
+  -webkit-transition:brown 300ms ease-in-out;
+  -moz-transition:brown 300ms ease-in-out;
+  color: brown;
+  background-color: #E7BC76;
+  /* clickable area is full width of flex box - how to change? */
+}
+
+a:active {
+  color: white;
 }
 a.ctr-btn{
   justify-content: center;
+
 }
+
+.idx-row{
+  flex-direction: row;
+}
+
+.ind-btns{
+  flex:1;
+  align-items: flex-end;
+}
+
+.dlt-btn{
+  cursor: pointer;
+  background-color: red;
+  border-radius: 8px;
+  border-color:gold;
+  font-size:1em;
+  /* delete button font size keeping overall "form" font size */
+  font-family: cursive;
+  color: white;
+  align-self: center;
+  height: 2em;
+  width: 4em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.dlt-btn:hover{
+  background-color: darkred;
+}
+
+.show{
+  justify-content: center;
+}
+
+/* edit button text top justified */
+a.edit-btn{
+  align-self: center;
+  margin:0;
+  border: 1px solid gold;
+  background-color: grey;
+  color:white;
+  height: 2em;
+  width: 4em;
+  border-radius:8px;
+  text-align: center;
+  align-self: center;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+a.edit-btn:hover{
+  background-color: #5D5D5D;
+}
+
+.submit-btn{
+  cursor: pointer;
+  background-color: grey;
+  border-radius: 8px;
+  border-color:gold;
+  font-size:1em;
+  font-family: cursive;
+  color: white;
+  align-self: center;
+  height: 2em;
+  width: 4em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+
+/* ----- all text throughout site ----- */
 
 p{
   padding-right: 2em;

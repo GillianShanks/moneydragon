@@ -5,11 +5,11 @@
 
 <h1>Editing my place: '<%=@merchant.name%>'</h1>
 <br />
-<form action="/places/<%=@merchant.id%>" method="POST">
+<form class="flex ctr-form" action="/places/<%=@merchant.id%>" method="POST">
   <label for="new-name">New name:</label>
   <input required type="text" id="new-name" name="name" value="<%=@merchant.name%>">
 
-  <input type="submit" value="Update">
+  <input class="submit-btn" type="submit" value="Update">
 </form>
 <br />
 <a class="ctr-btn inline-flex" href="/places/<%=@merchant.id%>">back to <%=@merchant.name%></a>

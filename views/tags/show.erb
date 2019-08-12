@@ -6,9 +6,9 @@
 <h4>A closer look at</h4>
 <h1><%=@tag.type%></h1>
 
-<a class="edit ctr-btn inline-flex" href="/tags/<%=@tag.id%>/edit">edit</a>
-<form action="/tags/<%=@tag.id%>/delete" method="POST">
-  <input class="delete" type="submit" value="delete">
+<a class="edit-btn ctr-btn inline-flex" href="/tags/<%=@tag.id%>/edit">edit</a>
+<form class ="flex show" action="/tags/<%=@tag.id%>/delete" method="POST">
+  <input class="dlt-btn"  type="submit" value="delete">
 </form>
 <br />
 <a class="ctr-btn inline-flex" href="/tags">back to my tags</a>

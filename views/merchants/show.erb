@@ -5,10 +5,10 @@
 
 <h4>A closer look at</h4>
 <h1><%= @merchant.name.capitalize %></h1>
-<a class="ctr-btn inline-flex" href="/places/<%= @merchant.id %>/edit">edit</a>
+<a class="edit-btn ctr-btn inline-flex" href="/places/<%= @merchant.id %>/edit">edit</a>
 
-<form class="delete" action="/places/<%= @merchant.id %>/delete" method="POST">
-  <input type="submit" value="delete">
+<form class ="flex show" action="/places/<%= @merchant.id %>/delete" method="POST">
+  <input class="dlt-btn" type="submit" value="delete">
 </form>
 
 <br />

@@ -7,7 +7,7 @@
 <p class="prv-spend">Previously:<br /> I spent £<%=@spend.amount%> at '<%=@spend.merchant.name%>', tagged as '<%=@spend.tag.type%>'.</p>
 
 
-<form action="/spending/<%=@spend.id%>" method="POST">
+<form class="flex ctr-form" action="/spending/<%=@spend.id%>" method="POST">
   <p>I spent:</p>
   <label for="add-amount">Amount (£): </label>
   <input required min="0" type="number" id="add-amount" name="amount" value="<%=@spend.amount%>">
@@ -33,7 +33,7 @@
   </select>
   <br />
   <br />
-  <input type="submit" value="update">
+  <input class="submit-btn" type="submit" value="update">
 
 </form>
 <br />
