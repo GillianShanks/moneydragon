@@ -1,32 +1,3 @@
-/* ---------FORM CSS------- */
-form{
-  font-size:1.2em;
-}
-
-.ctr-form{
-  justify-content: center;
-}
-
-label{
-  padding:0em 1em 0em 1em;
-}
-
-form.spending{
-  align-items: center;
-  font-size: 1.3em;
-}
-
-select{
-  color: white;
-  background-color: black;
-  font-family: cursive;
-  font-size: 0.7em;
-}
-
-select.option{
-  background-color: white;
-}
-
 /* ------BUTTONS AND LINKS ------- */
 
 a{
@@ -53,15 +24,6 @@ a.ctr-btn{
 
 }
 
-.idx-row{
-  flex-direction: row;
-}
-
-.ind-btns{
-  flex:1;
-  align-items: flex-end;
-}
-
 .dlt-btn{
   cursor: pointer;
   background-color: red;
@@ -71,7 +33,6 @@ a.ctr-btn{
   /* delete button font size keeping overall "form" font size */
   font-family: cursive;
   color: white;
-  align-self: center;
   height: 2em;
   width: 4em;
   margin-left: 1em;
@@ -88,7 +49,6 @@ a.ctr-btn{
 
 /* edit button text top justified */
 a.edit-btn{
-  align-self: center;
   margin:0;
   border: 1px solid gold;
   background-color: grey;
@@ -119,26 +79,4 @@ a.edit-btn:hover{
   width: 4em;
   margin-left: 1em;
   margin-right: 1em;
-}
-
-
-/* ----- all text throughout site ----- */
-
-p{
-  padding-right: 2em;
-  font-size: 1.3em;
-}
-
-h3 {
-  font-size: 1.5em;
-}
-
-h1 {
-  text-align: center;
-}
-
-h4 {
-  text-align: center;
-  font-size: 2em;
-  margin:0;
 }

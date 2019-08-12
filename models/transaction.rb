@@ -60,4 +60,9 @@ class Transaction
     return Tag.new(tag)
   end
 
+  def self.total()
+    sql="SELECT SUM(amount) FROM transactions"
+    return SqlRunner.run(sql)[0]["sum"].to_i()
+  end
+
 end

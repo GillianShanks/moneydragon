@@ -41,6 +41,7 @@ flex-direction: row;
   justify-content: center;
 }
 
+/* fixed background behind nav bar */
 body{
   background-color: black;
   background-image: url(/img/slimbg.png);
@@ -56,6 +57,7 @@ body{
   width:100%;
 }
 
+/* ensure content from other pages fits between nav and footer */
 .content{
   position: relative;
   top:60px;
@@ -64,29 +66,6 @@ body{
   margin-right: 1em;
   margin-bottom: 4em;
 }
-
-/* if screen less than 620px wide make nav list into a column*/
-
-@media screen and (max-width: 620px) {
-  .nav-btns {
-    flex-direction: column;
-    align-items: center;
-  }
-  .add-spend{
-    justify-content: center;
-    margin: auto;
-  }
-  .content{
-    top:230px;
-    flex: 0 0 620px;
-  }
-  /* when less than 400px keep the whole page the same size and introduce scroll bar - NOT WORKING */
-  .idx-row{
-    flex-direction: column;
-  }
-}
-
-
 
 /* -------- NAV BUTTONS ---------- */
 
@@ -170,6 +149,10 @@ ul .top{
   width: 4em;
 
 }
+/* ----- all text throughout site ----- */
+a{
+  font-size: 1.3em;
+}
 
 hr {
   border-color: gold;
@@ -177,4 +160,44 @@ hr {
   border-width: 1px;
   margin: 0.5em 0;
   flex:1;
+}
+
+p{
+  padding-right: 2em;
+  font-size:1.3em;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  text-align: center;
+  font-size: 2em;
+  margin:0;
+}
+
+/* if screen less than 620px wide make nav list into a column*/
+
+@media screen and (max-width: 620px) {
+  .nav-btns {
+    flex-direction: column;
+    align-items: center;
+  }
+  .add-spend{
+    justify-content: center;
+    margin: auto;
+  }
+  .content{
+    top:230px;
+    flex: 0 0 620px;
+  }
+  /* when less than 400px keep the whole page the same size and introduce scroll bar - NOT WORKING */
+  .idx-row{
+    flex-direction: column;
+  }
 }

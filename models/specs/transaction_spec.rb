@@ -13,4 +13,5 @@ class TransactionTest < MiniTest::Test
   def test_can_get_amount()
     assert_equal(15, @transaction1.amount)
   end
+
 end
