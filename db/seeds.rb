@@ -44,6 +44,55 @@ tag3 = Tag.new({
 
 tag3.save()
 
+month1 = Month.new({
+  "name" => "January",
+  "order" => 1
+  })
+month2 = Month.new({
+  "name" => "February",
+  "order" => 2
+  })
+month3 = Month.new({
+  "name" => "March",
+  "order" => 3
+  })
+month4 = Month.new({
+  "name" => "April",
+  "order" => 4
+  })
+month5 = Month.new({
+  "name" => "May",
+  "order" => 5
+  })
+month6 = Month.new({
+  "name" => "June",
+  "order" => 6
+  })
+month7 = Month.new({
+  "name" => "July",
+  "order" => 7
+  })
+month8 = Month.new({
+  "name" => "August",
+  "order" => 2
+  })
+month9 = Month.new({
+  "name" => "September",
+  "order" => 2
+  })
+month10 = Month.new({
+  "name" => "October",
+  "order" => 2
+  })
+month11 = Month.new({
+  "name" => "November",
+  "order" => 2
+  })
+month12 = Month.new({
+  "name" => "December",
+  "order" => 2
+  })
+
 
 
 transaction1 = Transaction.new({
