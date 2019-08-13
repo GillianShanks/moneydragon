@@ -1,3 +1,4 @@
+require_relative('../db/sql_runner.rb')
 require_relative('./merchant.rb')
 require_relative('./tag.rb')
 require_relative('./month.rb')
@@ -77,6 +78,6 @@ class Transaction
     return SqlRunner.run(sql)[0]["sum"].to_i()
   end
 
-  
+
 
 end

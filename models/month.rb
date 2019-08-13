@@ -1,3 +1,5 @@
+require_relative('../db/sql_runner.rb')
+
 class Month
 
   attr_reader :id, :name, :position

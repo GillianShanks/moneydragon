@@ -2,6 +2,7 @@ require_relative("../models/merchant.rb")
 require_relative("../models/tag.rb")
 require_relative("../models/transaction.rb")
 require_relative("../models/month.rb")
+require_relative("../models/budget.rb")
 require('pry-byebug')
 
 Tag.delete_all()
@@ -109,11 +110,19 @@ month11.save()
 month12.save()
 
 
+budget1 = Budget.new({
+  "name" => "2018",
+  "total"=>733
+  })
+
+budget1.save()
+
 transaction1 = Transaction.new({
   "amount" => 15,
   "merchant_id" => merchant1.id,
   "tag_id" => tag3.id,
-  "month_id" => month1.id
+  "month_id" => month1.id,
+  "budget_id" => budget1.id
   })
 transaction1.save()
 
@@ -121,7 +130,8 @@ transaction2 = Transaction.new({
   "amount" => 20,
   "merchant_id" => merchant3.id,
   "tag_id" => tag1.id,
-  "month_id" => month10.id
+  "month_id" => month10.id,
+  "budget_id" => budget1.id
   })
 transaction2.save()
 
@@ -129,7 +139,8 @@ transaction3 = Transaction.new({
   "amount" => 40,
   "merchant_id" => merchant2.id,
   "tag_id" => tag2.id,
-  "month_id" => month5.id
+  "month_id" => month5.id,
+  "budget_id" => budget1.id
   })
 transaction3.save()
 
