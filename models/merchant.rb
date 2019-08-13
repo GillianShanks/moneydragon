@@ -46,4 +46,16 @@ class Merchant
     return Merchant.new(merchant)
   end
 
+  def transactions()
+    sql="SELECT * FROM transactions WHERE merchant_id = $1"
+    values=[@id]
+    transactions=SqlRunner.run(sql,values)
+    return transactions.map{|details| Transaction.new(details)}
+
+  end
+
+  def total()
+    return transactions().sum{|spend|spend.amount}
+  end
+
 end
