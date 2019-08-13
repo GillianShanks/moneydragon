@@ -1,6 +1,6 @@
 class Transaction
 
-  attr_accessor :amount, :merchant_id, :tag_id
+  attr_accessor :amount, :merchant_id, :tag_id, :month_id
   attr_reader :id
 
   def initialize(details)
@@ -8,11 +8,12 @@ class Transaction
     @amount = details["amount"].to_i
     @merchant_id = details["merchant_id"].to_i
     @tag_id = details["tag_id"].to_i
+    @month_id = details["month_id"].to_i
   end
 
   def save()
-    sql = "INSERT INTO transactions (amount, merchant_id, tag_id) VALUES ($1, $2, $3) RETURNING id"
-    values = [@amount, @merchant_id, @tag_id]
+    sql = "INSERT INTO transactions (amount, merchant_id, tag_id, month_id) VALUES ($1, $2, $3, $4) RETURNING id"
+    values = [@amount, @merchant_id, @tag_id, @month_id]
     @id = SqlRunner.run(sql,values)[0]["id"].to_i()
   end
 
@@ -22,8 +23,8 @@ class Transaction
   end
 
   def update()
-    sql = "UPDATE transactions SET (amount, merchant_id, tag_id) = ($1, $2, $3) WHERE id = $4"
-    values = [@amount, @merchant_id, @tag_id, @id]
+    sql = "UPDATE transactions SET (amount, merchant_id, tag_id, month_id) = ($1, $2, $3, $4) WHERE id = $5"
+    values = [@amount, @merchant_id, @tag_id, @month_id, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -59,6 +60,10 @@ class Transaction
     tag= SqlRunner.run(sql,values)[0]
     return Tag.new(tag)
   end
+
+  # def month()
+  #
+  # end
 
   def self.total()
     sql="SELECT SUM(amount) FROM transactions"

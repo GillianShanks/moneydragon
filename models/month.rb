@@ -1,12 +1,18 @@
 class Month
 
-  attr_reader :id, :name, :order
+  attr_reader :id, :name, :position
   def initialize(details)
     @id = details["id"].to_i() if details["id"]
     @name = details["name"]
-    @order = details["order"].to_i()
+    @position = details["position"].to_i()
   end
 
-  
+  def save()
+    sql="INSERT INTO months (name, position) VALUES ($1,$2) RETURNING id"
+    values=[@name, @position]
+    @id=SqlRunner.run(sql, values)[0]["id"].to_i()
+  end
+
+
 
 end

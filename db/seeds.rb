@@ -1,10 +1,13 @@
 require_relative("../models/merchant.rb")
 require_relative("../models/tag.rb")
 require_relative("../models/transaction.rb")
+require_relative("../models/month.rb")
 require('pry-byebug')
 
 Tag.delete_all()
 Merchant.delete_all()
+
+Transaction.delete_all()
 
 merchant1 = Merchant.new({
   "name" => "Amazon"
@@ -46,73 +49,87 @@ tag3.save()
 
 month1 = Month.new({
   "name" => "January",
-  "order" => 1
+  "position" => 1
   })
 month2 = Month.new({
   "name" => "February",
-  "order" => 2
+  "position" => 2
   })
 month3 = Month.new({
   "name" => "March",
-  "order" => 3
+  "position" => 3
   })
 month4 = Month.new({
   "name" => "April",
-  "order" => 4
+  "position" => 4
   })
 month5 = Month.new({
   "name" => "May",
-  "order" => 5
+  "position" => 5
   })
 month6 = Month.new({
   "name" => "June",
-  "order" => 6
+  "position" => 6
   })
 month7 = Month.new({
   "name" => "July",
-  "order" => 7
+  "position" => 7
   })
 month8 = Month.new({
   "name" => "August",
-  "order" => 2
+  "position" => 8
   })
 month9 = Month.new({
   "name" => "September",
-  "order" => 2
+  "position" => 9
   })
 month10 = Month.new({
   "name" => "October",
-  "order" => 2
+  "position" => 10
   })
 month11 = Month.new({
   "name" => "November",
-  "order" => 2
+  "position" => 11
   })
 month12 = Month.new({
   "name" => "December",
-  "order" => 2
+  "position" => 12
   })
-
+month1.save()
+month2.save()
+month3.save()
+month4.save()
+month5.save()
+month6.save()
+month7.save()
+month8.save()
+month9.save()
+month10.save()
+month11.save()
+month12.save()
 
 
 transaction1 = Transaction.new({
   "amount" => 15,
   "merchant_id" => merchant1.id,
-  "tag_id" => tag3.id
+  "tag_id" => tag3.id,
+  "month_id" => month1.id
   })
 transaction1.save()
 
 transaction2 = Transaction.new({
   "amount" => 20,
   "merchant_id" => merchant3.id,
-  "tag_id" => tag1.id
+  "tag_id" => tag1.id,
+  "month_id" => month10.id
   })
 transaction2.save()
 
 transaction3 = Transaction.new({
   "amount" => 40,
   "merchant_id" => merchant2.id,
-  "tag_id" => tag2.id
+  "tag_id" => tag2.id,
+  "month_id" => month5.id
   })
 transaction3.save()
 

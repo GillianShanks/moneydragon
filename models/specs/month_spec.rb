@@ -8,7 +8,7 @@ class MonthTest < MiniTest::Test
   def setup()
     @month1 = Month.new({
       "name" => "January",
-      "order" => 1
+      "position" => 1
       })
   end
 
@@ -16,8 +16,8 @@ class MonthTest < MiniTest::Test
     assert_equal("January", @month1.name)
   end
 
-  def test_can_get_order()
-    assert_equal(1, @month1.order)
+  def test_can_get_position()
+    assert_equal(1, @month1.position)
   end
 
 end
