@@ -31,4 +31,11 @@ class Month
     return Month.new(month)
   end
 
+  def transactions()
+    sql="SELECT * FROM transactions WHERE month_id = $1"
+    values=[@id]
+    transactions=SqlRunner.run(sql, values)
+    return transactions.map{|transaction|Transaction.new(transaction)}
+  end
+
 end
