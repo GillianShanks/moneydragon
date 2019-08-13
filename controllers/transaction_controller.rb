@@ -19,7 +19,7 @@ end
 post '/spending' do
   spending=Transaction.new(params)
   spending.save()
-  redirect("/spending")
+  redirect("/budgets")
 end
 
 #MONTHLY INDEX
@@ -43,7 +43,7 @@ end
 post '/spending/:id' do
   spend=Transaction.new(params)
   spend.update()
-  redirect('/spending')
+  redirect('/budgets')
 end
 
 #DELETE
@@ -51,5 +51,5 @@ post '/spending/:id/delete' do
   id=params[:id].to_i()
   spend=Transaction.find(id)
   spend.delete()
-  redirect('/spending')
+  redirect('/budgets')
 end

@@ -9,7 +9,10 @@
 <br />
 <hr />
 <%for budget in @budgets%>
-<h3><%=budget.name.capitalize%> - £<%=budget.total%></h3>
+<div class="inline-flex">
+  <h3><%=budget.name.capitalize%> - £<%=budget.total%> </h3>
+  <h3 style="color: red; margin-left:1em"> <%="!!!  WARNING: NEAR BUDGET LIMIT !!!" if budget.remaining()<10 %></h3>
+</div>
 <a href="/budgets/<%=budget.id%>">more details</a>
 <hr />
 <%end%>

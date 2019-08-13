@@ -56,7 +56,11 @@ class Budget
   end
 
   def total_spent()
-    transactions().sum{|spend|spend.amount}
+    return transactions().sum{|spend|spend.amount}
+  end
+
+  def remaining()
+    return @total - total_spent()
   end
 
 end

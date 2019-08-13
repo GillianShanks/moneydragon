@@ -13,8 +13,13 @@
 <br />
 
 <!-- TABLE -->
-<h2>Total budget: £<%=@budget.total%></h2>
-<h4>Suggested monthly allowance: £<%=@budget.monthly%></h4>
+<h1>Total budget: £<%=@budget.total%></h1>
+<h4>(Suggested monthly allowance: £<%=@budget.monthly%>)</h4>
+<br />
+<h4>Total spent so far: £<%=@budget.total_spent()%></h4>
+<h4>Total remaining: £<%=@budget.remaining()%></h4>
+<h3 style="color: red; margin:0; text-align: center;"><%=" !!! WARNING: NEAR BUDGET LIMIT !!!" if @budget.remaining()<10 %></h3>
+  <br />
 <!-- <div class=""> -->
 <a class="ctr-btn inline-flex" href="/spending/new">add spend</a>
 <!-- </div> -->
