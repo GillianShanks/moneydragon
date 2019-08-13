@@ -197,7 +197,7 @@ h4 {
     margin: auto;
   }
   .content{
-    top:230px;
+    top:290px;
     flex: 0 0 620px;
   }
   /* when less than 400px keep the whole page the same size and introduce scroll bar - NOT WORKING */

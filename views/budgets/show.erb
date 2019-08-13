@@ -5,9 +5,9 @@
 
 <h4>A closer look at</h4>
 <h1><%= @budget.name.capitalize %></h1>
-<a class="edit-btn ctr-btn inline-flex" href="/places/<%= @budget.id %>/edit">edit</a>
+<a class="edit-btn ctr-btn inline-flex" href="/budgets/<%= @budget.id %>/edit">edit</a>
 
-<form class ="flex show" action="/places/<%= @budget.id %>/delete" method="POST">
+<form class ="flex show" action="/budgets/<%= @budget.id %>/delete" method="POST">
   <input class="dlt-btn" type="submit" value="delete">
 </form>
 <br />

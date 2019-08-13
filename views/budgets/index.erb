@@ -9,7 +9,7 @@
 <br />
 <hr />
 <%for budget in @budgets%>
-<h3><%=budget.name.capitalize%></h3>
+<h3><%=budget.name.capitalize%> - £<%=budget.total%></h3>
 <a href="/budgets/<%=budget.id%>">more details</a>
 <hr />
 <%end%>

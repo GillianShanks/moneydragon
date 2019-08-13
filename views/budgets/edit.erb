@@ -1,0 +1,30 @@
+<div class="sml-logo flex flex-row">
+  <img class="sml-logo-dragon justify-center" src="/img/dragongif.gif" alt="dragon on gold">
+  <img class="sml-logo-words justify-center" src="/img/md-txt-trans.png" alt="moneydragon text">
+</div>
+
+<h4>Editing original budget of '£<%=@budget.total%>' for '<%=@budget.name.capitalize%>'.</h4>
+
+<h1>Edit your budget:</h1>
+
+<form class="flex ctr-form" action="/budgets/<%=@budget.id%>" method="POST">
+  <div class="flex-column">
+    <div class="flex" style="width: 20em; padding-bottom:1em; justify-content: center;">
+      <label style="margin:0em 2em 0em 0em;" for="new-name">Name:</label>
+      <input value="<%=@budget.name%>" required type="text" name="name" id="new-name">
+    </div>
+
+    <div class="flex" style="width: 20em; padding-bottom:1em; justify-content: center;">
+      <label style="margin:0em 2em 0em 0em;" for="new-total">Total:</label>
+      <input value="<%=@budget.total%>" required min="0" type="number" name="total" id="new-total">
+      <!-- have tick box to show monthly budget -->
+    </div>
+
+    <div class="flex" style="width: 20em; justify-content: center;">
+      <input class="submit-btn" type="submit" value="update">
+    </div>
+  </div>
+</form>
+
+<br />
+<a class="ctr-btn inline-flex" href="/budgets">go to my budgets</a>

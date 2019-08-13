@@ -1,5 +1,6 @@
 .title-row{
   justify-content: space-around;
+  text-align: left;
 }
 
 .title-cell{
@@ -7,8 +8,7 @@
   font-weight: bold;
   color: white;
   padding:0;
-  text-align: left;
-  width: 7em;
+  width: 6em;
 }
 p {
   padding: 0;

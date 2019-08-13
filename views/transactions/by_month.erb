@@ -20,6 +20,7 @@
 
 <div class="flex idx-tble flex-column">
   <div class="title-row flex flex-row">
+    <p class="title-cell">In budget:</p>
     <p class="title-cell">I spent:</p>
     <p class="title-cell">At:</p>
     <p class="title-cell">In:</p>
@@ -32,6 +33,10 @@
     <%for month in @months %>
     <%for spend in month.transactions()%>
     <div class="cells flex flex-row">
+      <div class="cell-data">
+        <a href="/budgets/<%=spend.budget_id%>"><%=spend.budget().name.capitalize%> </a>
+      </div>
+      
       <div class="cell-data">
         <p>£<%=spend.amount%></p>
       </div>
