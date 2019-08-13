@@ -1,4 +1,6 @@
-
+html {
+  width: 100%;
+}
 
 .flex {
   display: -webkit-box;
