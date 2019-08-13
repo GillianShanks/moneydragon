@@ -5,6 +5,7 @@ require_relative('../budget.rb')
 class BudgetTest < MiniTest::Test
   def setup()
     @budget=Budget.new({
+      "name"=>"2018"
       "total"=>600
       })
   end
