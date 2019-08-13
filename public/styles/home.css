@@ -23,3 +23,26 @@
   font-size: 2em;
 
 }
+
+.spending{
+  transform: rotate(45deg);
+  transform-origin:left;
+  margin-top: -2em;
+  font-size: 2em;
+  line-height: 6em;
+}
+
+.analyse{
+  transform: rotate(-45deg);
+  transform-origin:right;
+  margin-top: -2em;
+  font-size: 2em;
+  line-height: 4em;
+}
+
+.hoard{
+  transform: rotate(45deg);
+  transform-origin:left;
+  font-size: 2em;
+  line-height: 6em;
+}
