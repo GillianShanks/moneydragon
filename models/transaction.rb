@@ -1,3 +1,7 @@
+require_relative('./merchant.rb')
+require_relative('./tag.rb')
+require_relative('./month.rb')
+
 class Transaction
 
   attr_accessor :amount, :merchant_id, :tag_id, :month_id
@@ -61,9 +65,12 @@ class Transaction
     return Tag.new(tag)
   end
 
-  # def month()
-  #
-  # end
+  def month()
+    sql="SELECT * FROM months WHERE id = $1"
+    values=[@month_id]
+    month=SqlRunner.run(sql,values)[0]
+    return Month.new(month)
+  end
 
   def self.total()
     sql="SELECT SUM(amount) FROM transactions"

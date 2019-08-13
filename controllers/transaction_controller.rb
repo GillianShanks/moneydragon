@@ -20,6 +20,12 @@ post '/spending' do
   redirect("/spending")
 end
 
+#MONTHLY INDEX
+get '/spending/by_month' do
+  @months = Month.all()
+  erb(:"transactions/by_month")
+end
+
 #EDIT
 get '/spending/:id/edit' do
   id=params[:id].to_i()
@@ -43,5 +49,3 @@ post '/spending/:id/delete' do
   spend.delete()
   redirect('/spending')
 end
-
-#SHOW

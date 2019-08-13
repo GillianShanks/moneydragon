@@ -14,6 +14,7 @@
   <div class="title-row flex flex-row">
     <p class="title-cell">I spent:</p>
     <p class="title-cell">At:</p>
+    <p class="title-cell">In:</p>
     <p class="title-cell">Tagged as:</p>
     <p class="title-cell">edit or delete</p>
   </div>
@@ -28,6 +29,10 @@
 
       <div class="cell-data">
         <a href="/places/<%=spend.merchant_id%>"><%=spend.merchant.name.capitalize%> </a>
+      </div>
+
+      <div class="cell-data">
+        <p><%=spend.month%></p>
       </div>
 
       <div class="cell-data">
