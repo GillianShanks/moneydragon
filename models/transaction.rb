@@ -14,11 +14,12 @@ class Transaction
     @merchant_id = details["merchant_id"].to_i
     @tag_id = details["tag_id"].to_i
     @month_id = details["month_id"].to_i
+    @budget_id = details["budget_id"].to_i
   end
 
   def save()
-    sql = "INSERT INTO transactions (amount, merchant_id, tag_id, month_id) VALUES ($1, $2, $3, $4) RETURNING id"
-    values = [@amount, @merchant_id, @tag_id, @month_id]
+    sql = "INSERT INTO transactions (amount, merchant_id, tag_id, month_id, budget_id) VALUES ($1, $2, $3, $4, $5) RETURNING id"
+    values = [@amount, @merchant_id, @tag_id, @month_id, @budget_id]
     @id = SqlRunner.run(sql,values)[0]["id"].to_i()
   end
 
@@ -28,8 +29,8 @@ class Transaction
   end
 
   def update()
-    sql = "UPDATE transactions SET (amount, merchant_id, tag_id, month_id) = ($1, $2, $3, $4) WHERE id = $5"
-    values = [@amount, @merchant_id, @tag_id, @month_id, @id]
+    sql = "UPDATE transactions SET (amount, merchant_id, tag_id, month_id, budget_id) = ($1, $2, $3, $4, $5) WHERE id = $6"
+    values = [@amount, @merchant_id, @tag_id, @month_id, @budget_id, @id]
     SqlRunner.run(sql, values)
   end
 
