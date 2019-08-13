@@ -4,34 +4,46 @@
 </div>
 
 <h1>Edit my spending details:</h1>
-<p class="prv-spend">Previously:<br /> I spent £<%=@spend.amount%> at '<%=@spend.merchant.name%>', tagged as '<%=@spend.tag.type%>'.</p>
+<h4 class="prv-spend">Previously:<br /> I spent £<%=@spend.amount%> at '<%=@spend.merchant.name%>', tagged as '<%=@spend.tag.type%>'.</h4>
+<br />
 
-
-<form class="flex ctr-form" action="/spending/<%=@spend.id%>" method="POST">
+<form class="spending flex flex-column" action="/spending/<%=@spend.id%>" method="POST">
+  <div class="amount">
   <p>I spent:</p>
-  <label for="add-amount">Amount (£): </label>
+  <label style="padding:0em 4em 0em 0em;" for="add-amount">Amount (£): </label>
   <input required min="0" type="number" id="add-amount" name="amount" value="<%=@spend.amount%>">
+  </div>
 
-  <br />
-  <br />
-  <label for="dd-merchant">At:</label>
+  <div>
+  <label style="padding:0em 6em 0em 0em;" for="dd-merchant">At:</label>
   <select required name="merchant_id" id="dd-merchant">
     <option value="" disabled>Select a place (required):</option>
     <%for merchant in @merchants%>
-    <option <%="selected" if @spend.merchant_id == merchant.id%> value="<%=merchant.id%>"><%=merchant.name%></option>
+    <option <%="selected" if @spend.merchant_id == merchant.id%> value="<%=merchant.id%>"><%=merchant.name.capitalize%></option>
     <%end%>
   </select>
+  </div>
 
-  <br />
-  <br />
-  <label for="dd-tag">Tag as:</label>
+  <div>
+  <label style="padding:0em 6em 0em 0em;" for="dd-month">At:</label>
+  <select required name="month_id" id="dd-month">
+    <option value="" disabled>Select a time (required):</option>
+    <%for month in @months%>
+    <option <%="selected" if @spend.month_id == month.id%> value="<%=month.id%>"><%=month.name.capitalize%></option>
+    <%end%>
+  </select>
+  </div>
+
+  <div>
+  <label style="padding:0em 4em 0em 0em;" for="dd-tag">Tag as:</label>
   <select required name="tag_id" id="dd-tag">
     <option value="" disabled>Select a tag (required):</option>
     <%for tag in @tags%>
-    <option <%="selected" if @spend.tag_id == tag.id%> value="<%=tag.id%>"><%=tag.type%></option>
+    <option <%="selected" if @spend.tag_id == tag.id%> value="<%=tag.id%>"><%=tag.type.downcase%></option>
     <%end%>
   </select>
-  <br />
+  </div>
+
   <br />
   <input class="submit-btn" type="submit" value="update">
 

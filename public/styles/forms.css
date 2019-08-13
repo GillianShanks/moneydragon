@@ -7,9 +7,11 @@ form{
   justify-content: center;
 }
 
-label{
-  padding:0em 1em 0em 1em;
-}
+/* label{
+  padding:0em 4em 0em 0em;
+  justify-content: flex-start;
+  width: 10em;
+} */
 
 form.spending{
   align-items: center;

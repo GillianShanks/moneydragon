@@ -9,12 +9,12 @@
 <form class="spending flex flex-column"  action="/spending" method="POST">
   <div class="amount">
   <p>I spent:</p>
-  <label for="add-amount">Amount (£): </label>
+  <label  style="padding:0em 4em 0em 0em;" for="add-amount">Amount (£): </label>
   <input required min="0" type="number" id="add-amount" name="amount">
   </div>
 
   <div>
-  <label style="padding-right: 4em; padding-left:1em;" for="dd-merchant">At:</label>
+  <label style="padding:0em 6em 0em 0em;" for="dd-merchant">At:</label>
   <select required name="merchant_id" id="dd-merchant">
     <option value="" selected disabled>Select a place (required):</option>
     <%for merchant in @merchants%>
@@ -24,7 +24,7 @@
   </div>
 
   <div>
-  <label style="padding-right: 4em; padding-left:1em;" for="dd-month">In:</label>
+  <label style="padding:0em 6em 0em 0em;" for="dd-month">In:</label>
   <select required name="month_id" id="dd-month">
     <option value="" selected disabled>Select a time (required):</option>
     <%for month in @months%>
@@ -34,7 +34,7 @@
   </div>
 
   <div>
-  <label style="padding-right: 2.5em;" for="dd-tag">Tag as:</label>
+  <label style="padding:0em 4em 0em 0em;" for="dd-tag">Tag as:</label>
   <select required name="tag_id" id="dd-tag">
     <option value="" selected disabled>Select a tag (required):</option>
     <%for tag in @tags%>

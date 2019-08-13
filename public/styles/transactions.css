@@ -57,6 +57,14 @@ a.idx-edit-btn{
   margin-bottom: 1em;
 }
 
+.sort-by{
+  justify-content: center;
+}
+
+a.sort-btn{
+  padding: 0em 0.5em 0em 0.5em;
+}
+
 /* .idx-row{
   flex-direction: row;
 } */

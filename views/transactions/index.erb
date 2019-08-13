@@ -7,8 +7,13 @@
 <h1>My spending:</h1>
 <h4>Total spent: £<%=Transaction.total()%></h4>
 <a class="ctr-btn inline-flex" href="/spending/new">add spend</a>
+
 <h4>Sort all by: </h4>
-<a class="ctr-btn inline-flex" href="/spending/by_month">Month</a>
+<div class="sort-by inline-flex">
+    <a class="sort-btn" href="/spending">Added</a>
+    <a class="sort-btn" href="/spending/by_month">Month</a>
+</div>
+
 <br />
 <br />
 
