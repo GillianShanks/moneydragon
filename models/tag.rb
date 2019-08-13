@@ -52,4 +52,8 @@ class Tag
     return transactions.map{|details| Transaction.new(details)}
   end
 
+  def total()
+    return transactions().sum{|spend|spend.amount}
+  end
+
 end
