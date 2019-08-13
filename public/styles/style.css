@@ -169,9 +169,11 @@ p{
   font-size:1.3em;
 }
 
-h1 {
+h1, h2{
   text-align: center;
 }
+
+
 
 h3 {
   font-size: 1.5em;

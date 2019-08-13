@@ -3,7 +3,7 @@ form{
   font-size:1.2em;
 }
 
-.ctr-form{
+form.ctr-form{
   justify-content: center;
 }
 
@@ -13,8 +13,7 @@ form{
   width: 10em;
 } */
 
-form.spending{
-  align-items: center;
+form.add-spending{
   font-size: 1.3em;
 }
 

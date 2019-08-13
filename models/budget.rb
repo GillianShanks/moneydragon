@@ -55,5 +55,8 @@ class Budget
     return transactions.map{|details| Transaction.new(details)}
   end
 
+  def total_spent()
+    transactions().sum{|spend|spend.amount}
+  end
 
 end

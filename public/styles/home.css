@@ -28,6 +28,10 @@
 
 }
 
+p.desc{
+  padding:0;
+}
+
 .spending{
   transform: rotate(45deg);
   transform-origin:left;

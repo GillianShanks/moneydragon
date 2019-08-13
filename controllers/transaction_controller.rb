@@ -11,6 +11,7 @@ get '/spending/new' do
   @merchants = Merchant.all()
   @tags = Tag.all()
   @months = Month.all()
+  @budgets = Budget.all()
   erb(:"transactions/new")
 end
 

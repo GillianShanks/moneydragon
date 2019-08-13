@@ -5,7 +5,7 @@ require_relative('./month.rb')
 
 class Transaction
 
-  attr_accessor :amount, :merchant_id, :tag_id, :month_id
+  attr_accessor :amount, :merchant_id, :tag_id, :month_id, :budget_id
   attr_reader :id
 
   def initialize(details)
@@ -72,6 +72,13 @@ class Transaction
     values=[@month_id]
     month=SqlRunner.run(sql,values)[0]
     return Month.new(month)
+  end
+
+  def budget()
+    sql="SELECT * FROM budgets WHERE id = $1"
+    values=[@budget_id]
+    budget=SqlRunner.run(sql, values)[0]
+    return Budget.new(budget)
   end
 
   def self.total()
