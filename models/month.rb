@@ -18,4 +18,10 @@ class Month
     SqlRunner.run(sql)
   end
 
+  def self.all()
+    sql="SELECT * FROM months ORDER BY position"
+    months=SqlRunner.run(sql)
+    return months.map{|month|Month.new(month)}
+  end
+
 end
