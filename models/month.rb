@@ -38,4 +38,9 @@ class Month
     return transactions.map{|transaction|Transaction.new(transaction)}
   end
 
+  def total()
+    return transactions().sum{|transaction|transaction.amount}
+
+  end
+
 end
