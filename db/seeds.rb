@@ -8,6 +8,7 @@ require('pry-byebug')
 Tag.delete_all()
 Merchant.delete_all()
 Month.delete_all()
+Budget.delete_all()
 Transaction.delete_all()
 
 merchant1 = Merchant.new({

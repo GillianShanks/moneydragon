@@ -18,7 +18,20 @@ class Budget
     @id = SqlRunner.run(sql, values)[0]["id"].to_i()
   end
 
-  
+  def self.delete_all()
+    sql="DELETE FROM budgets"
+    SqlRunner.run(sql)
+  end
+
+  def update()
+    sql="UPDATE budgets SET (name, total, monthly) = ($1, $2, $3) WHERE id = $4"
+    values=[@name, @total, @monthly, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def self.all()
+    
+  end
 
 
 end
