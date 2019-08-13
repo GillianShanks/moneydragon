@@ -4,15 +4,14 @@
 </div>
 
 
-<h1>My spending (by month):</h1>
-<h4>Total spent: £<%=Transaction.total()%></h4>
+<h1>My spending in <%=@month.name%>:</h1>
+<h4>Total spent: £<%=@month.total()%></h4>
 <a class="ctr-btn inline-flex" href="/spending/new">add spend</a>
 <br />
-<h4>Sort all by: </h4>
+<h4>See ALL spending by: </h4>
 <div class="sort-by inline-flex">
     <a class="sort-btn" href="/spending">Added</a>
     <a class="sort-btn" href="/spending/by_month">Month</a>
-
 </div>
 
 <br />
@@ -29,8 +28,7 @@
 <hr />
 
   <div class="data flex flex-column">
-    <%for month in @months %>
-    <%for spend in month.transactions()%>
+    <%for spend in @month.transactions %>
     <div class="cells flex flex-row">
       <div class="cell-data">
         <p>£<%=spend.amount%></p>
@@ -59,7 +57,6 @@
       </div>
     </div>
     <hr />
-    <%end%>
     <%end%>
   </div>
 </div>

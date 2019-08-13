@@ -77,4 +77,6 @@ class Transaction
     return SqlRunner.run(sql)[0]["sum"].to_i()
   end
 
+  
+
 end
