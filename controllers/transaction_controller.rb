@@ -10,6 +10,7 @@ end
 get '/spending/new' do
   @merchants = Merchant.all()
   @tags = Tag.all()
+  @months = Month.all()
   erb(:"transactions/new")
 end
 
@@ -32,6 +33,7 @@ get '/spending/:id/edit' do
   @spend=Transaction.find(id)
   @merchants = Merchant.all()
   @tags = Tag.all()
+  @months=Month.all()
   erb(:"transactions/edit")
 end
 

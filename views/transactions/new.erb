@@ -24,6 +24,16 @@
   </div>
 
   <div>
+  <label style="padding-right: 4em; padding-left:1em;" for="dd-month">In:</label>
+  <select required name="month_id" id="dd-month">
+    <option value="" selected disabled>Select a time (required):</option>
+    <%for month in @months%>
+    <option value="<%=month.id%>"><%=month.name.capitalize%></option>
+    <%end%>
+  </select>
+  </div>
+
+  <div>
   <label style="padding-right: 2.5em;" for="dd-tag">Tag as:</label>
   <select required name="tag_id" id="dd-tag">
     <option value="" selected disabled>Select a tag (required):</option>
