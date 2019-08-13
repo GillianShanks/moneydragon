@@ -24,4 +24,11 @@ class Month
     return months.map{|month|Month.new(month)}
   end
 
+  def self.find(id)
+    sql="SELECT * FROM months WHERE id = $1"
+    values=[id]
+    month=SqlRunner.run(sql, values)[0]
+    return Month.new(month)
+  end
+
 end
