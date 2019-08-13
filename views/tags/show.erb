@@ -11,4 +11,62 @@
   <input class="dlt-btn"  type="submit" value="delete">
 </form>
 <br />
+
+<!-- TABLE -->
+<h4>Total spent: £<%=@month.total()%></h4>
+<a class="ctr-btn inline-flex" href="/spending/new">add spend</a>
+<br />
+<h4>See ALL spending by: </h4>
+<div class="sort-by inline-flex">
+    <a class="sort-btn" href="/spending">Added</a>
+    <a class="sort-btn" href="/spending/by_month">Month</a>
+</div>
+
+<br />
+<br />
+
+<div class="flex idx-tble flex-column">
+  <div class="title-row flex flex-row">
+    <p class="title-cell">I spent:</p>
+    <p class="title-cell">At:</p>
+    <p class="title-cell">In:</p>
+    <p class="title-cell">Tagged as:</p>
+    <p class="title-cell">edit or delete</p>
+  </div>
+<hr />
+
+  <div class="data flex flex-column">
+    <%for spend in @month.transactions %>
+    <div class="cells flex flex-row">
+      <div class="cell-data">
+        <p>£<%=spend.amount%></p>
+      </div>
+
+      <div class="cell-data">
+        <a href="/places/<%=spend.merchant_id%>"><%=spend.merchant.name.capitalize%> </a>
+      </div>
+
+      <div class="cell-data">
+        <a href="/months/<%=spend.month_id%>"><%=spend.month.name%></a>
+      </div>
+
+      <div class="cell-data">
+        <a href="/tags/<%=spend.tag_id%>"><%=spend.tag.type%></a>
+      </div>
+
+      <div class="idx-btns cell-data">
+        <!-- making this flex causes buttons to fill whole row -->
+        <div class="flex idx-btns">
+          <a class="idx-edit-btn" href="/spending/<%=spend.id%>/edit">edit</a>
+          <form style="" class="idx-dlt" action="/spending/<%=spend.id%>/delete" method="POST">
+            <input class="dlt-btn" type="submit" value="delete">
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <%end%>
+  </div>
+</div>
+
 <a class="ctr-btn inline-flex" href="/tags">back to my tags</a>
