@@ -4,7 +4,7 @@
 </div>
 
 
-<h1>My spending (by month):</h1>
+<h1>All my spending (by month):</h1>
 <h4>Total spent: £<%=Transaction.total()%></h4>
 <a class="ctr-btn inline-flex" href="/spending/new">add spend</a>
 <br />
@@ -36,7 +36,7 @@
       <div class="cell-data">
         <a href="/budgets/<%=spend.budget_id%>"><%=spend.budget().name.capitalize%> </a>
       </div>
-      
+
       <div class="cell-data">
         <p>£<%=spend.amount%></p>
       </div>

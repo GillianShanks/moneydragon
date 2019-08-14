@@ -6,6 +6,7 @@ get '/budgets' do
   erb(:"budgets/index")
 end
 
+
 #NEW
 get '/budgets/new' do
   erb(:"budgets/new")
@@ -16,6 +17,14 @@ post '/budgets' do
   budget=Budget.new(params)
   budget.save()
   redirect("/budgets")
+end
+
+#BY MONTH
+get '/budgets/:id/by_month' do
+  id=params[:id].to_i()
+  @budget=Budget.find(id)
+  @months=Month.all()
+  erb(:"budgets/by_month")
 end
 
 #EDIT
@@ -38,6 +47,7 @@ post '/budgets/:id/delete' do
   budget.delete()
   redirect("/budgets")
 end
+
 
 #SHOW
 get '/budgets/:id' do

@@ -63,4 +63,10 @@ class Budget
     return @total - total_spent()
   end
 
+  def warning()
+    return " !!!! OH NO! Budget limit has been EXCEEDED !!!!!" if remaining()<0
+    return " !!! WARNING: near budget limit !!!" if remaining()<10
+
+  end
+
 end

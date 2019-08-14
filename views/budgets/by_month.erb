@@ -1,0 +1,85 @@
+<div class="sml-logo flex flex-row">
+  <img class="sml-logo-dragon justify-center" src="/img/dragongif.gif" alt="dragon on gold">
+  <img class="sml-logo-words justify-center" src="/img/md-txt-trans.png" alt="moneydragon text">
+</div>
+
+
+<h1>Total budget:  £<%=@budget.total%></h1>
+<h4>(Suggested monthly allowance: £<%=@budget.monthly%>)</h4>
+<br />
+<h4>Total spent so far: £<%=@budget.total_spent()%></h4>
+<h4>Total remaining: £<%=@budget.remaining()%></h4>
+<h3 style="color: red; margin:0; text-align: center;"><%=@budget.warning()%></h3>
+  <br />
+
+  <a class="ctr-btn inline-flex" href="/spending/new">add spend</a>
+
+  <br />
+  <h4>See '<%= @budget.name.capitalize %>' spending by: </h4>
+  <div class="sort-by inline-flex">
+    <a class="sort-btn" href="/budgets/<%=@budget.id%>">Added</a>
+    <a class="sort-btn" href="/budgets/<%=@budget.id%>/by_month">Month</a>
+  </div>
+
+  <br />
+  <br />
+
+
+  <div class="flex idx-tble flex-column">
+    <div class="title-row flex flex-row">
+      <p class="title-cell">In budget:</p>
+      <p class="title-cell">I spent:</p>
+      <p class="title-cell">At:</p>
+      <p class="title-cell">In:</p>
+      <p class="title-cell">Tagged as:</p>
+      <p class="title-cell">edit or delete</p>
+    </div>
+    <hr />
+
+    <div class="data flex flex-column">
+      <%for month in @months %>
+      <%for spend in month.transactions()%>
+      <%if spend.budget_id == @budget.id%>
+      <div class="cells flex flex-row">
+        <div class="cell-data">
+          <a href="/budgets/<%=spend.budget_id%>"><%=spend.budget().name.capitalize%> </a>
+        </div>
+
+        <div class="cell-data">
+          <p>£<%=spend.amount%></p>
+        </div>
+
+        <div class="cell-data">
+          <a href="/places/<%=spend.merchant_id%>"><%=spend.merchant.name.capitalize%> </a>
+        </div>
+
+        <div class="cell-data">
+          <a href="/months/<%=spend.month_id%>"><%=spend.month.name%></a>
+        </div>
+
+        <div class="cell-data">
+          <a href="/tags/<%=spend.tag_id%>"><%=spend.tag.type%></a>
+        </div>
+
+        <div class="idx-btns cell-data">
+          <!-- making this flex causes buttons to fill whole row -->
+          <div class="flex idx-btns">
+            <a class="idx-edit-btn" href="/spending/<%=spend.id%>/edit">edit</a>
+            <form style="" class="idx-dlt" action="/spending/<%=spend.id%>/delete" method="POST">
+              <input class="dlt-btn" type="submit" value="delete">
+            </form>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <%end%>
+      <%end%>
+      <%end%>
+    </div>
+  </div>
+
+
+
+
+  <br />
+  <a class="ctr-btn inline-flex" class="ctr-btn inline-flex"href="/">home</a>
