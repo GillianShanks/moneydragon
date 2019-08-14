@@ -113,7 +113,7 @@ month12.save()
 
 budget1 = Budget.new({
   "name" => "2018",
-  "total"=>733
+  "total"=>733,
   })
 
 budget1.save()

@@ -9,6 +9,7 @@ class Budget
     @name = details["name"]
     @total = details["total"].to_i()
     @monthly = '%.2f' % (@total.to_f()/12)
+
   end
 
 
@@ -25,7 +26,7 @@ class Budget
 
   def update()
     sql="UPDATE budgets SET (name, total, monthly) = ($1, $2, $3) WHERE id = $4"
-    values=[@name, @total, @monthly, @id]
+    values=[@name, @total, @months, @id]
     SqlRunner.run(sql, values)
   end
 
