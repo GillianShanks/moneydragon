@@ -57,6 +57,10 @@ a.idx-edit-btn{
   margin-bottom: 1em;
 }
 
+a.idx-edit-btn:hover{
+  background-color: #5D5D5D;
+}
+
 .sort-by{
   justify-content: center;
 }

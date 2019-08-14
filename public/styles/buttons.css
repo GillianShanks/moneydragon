@@ -68,7 +68,7 @@ a.edit-btn:hover{
 
 input.submit-btn{
   cursor: pointer;
-  background-color: grey;
+  background-color: black;
   border-radius: 8px;
   border-color:gold;
   font-size:1em;

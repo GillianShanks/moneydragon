@@ -103,6 +103,9 @@ body{
   margin:0;
 }
 
+.top a:hover{
+  background-color: lightgrey;
+}
 ul .top{
   /* can't get rid of margin on add-spend */
     margin=0;
@@ -110,6 +113,10 @@ ul .top{
 
 .add-spend a{
   background-color: orange;
+}
+
+.add-spend a:hover{
+  background-color: darkorange;
 }
 
 .nav-btns{
@@ -135,6 +142,7 @@ ul .top{
   bottom:0;
   text-align: right;
 }
+
 
 /* small logo at top of all pages but home  (has same issue of disappearing as add-spend) - any way to hide on just the home page?*/
 .sml-logo{
